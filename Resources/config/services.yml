@@ -1,0 +1,19 @@
+parameters:
+    genderize_io_endpoint: "https://api.genderize.io/"
+
+services:
+    genderize_io.client:
+        class: Jhg\GenderizeIoClient\HttpClient\GenderizeClient
+        arguments: [%genderize_io_endpoint%]
+
+    genderize_io.genderizer:
+        class: Jhg\GenderizeIoClient\Genderizer\Genderizer
+        arguments: [@genderize_io.client]
+
+    genderizer:
+        alias: genderize_io.genderizer
+
+    genderize_io.twig:
+        class: Jhg\GenderizeIoBundle\Twig\GenderizeExtension
+        tags:
+            - { name: twig.extension }
