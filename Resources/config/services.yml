@@ -4,7 +4,6 @@ parameters:
 services:
     genderize_io.client:
         class: Jhg\GenderizeIoClient\HttpClient\GenderizeClient
-        arguments: [%genderize_io_endpoint%]
 
     genderize_io.genderizer:
         class: Jhg\GenderizeIoClient\Genderizer\Genderizer
@@ -15,5 +14,6 @@ services:
 
     genderize_io.twig:
         class: Jhg\GenderizeIoBundle\Twig\GenderizeExtension
+        arguments: [@genderize_io.genderizer]
         tags:
             - { name: twig.extension }
