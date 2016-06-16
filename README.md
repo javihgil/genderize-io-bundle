@@ -3,6 +3,7 @@
 This bundle integrates GenderizeIoClient into Symfony Projects.
 
 ## Configure
+## Configure
 
 
 ## Usage from a controller
