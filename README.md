@@ -2,8 +2,29 @@
 
 This bundle integrates GenderizeIoClient into Symfony Projects.
 
+## Install
+
+1. Install package with composer:
+
+```
+composer require javihgil/genderize-io-bundle
+```
+
+2. Add bundle to appKernel.php:
+```
+$bundles = array( 
+    ...
+    new Jhg\GenderizeIoBundle\GenderizeIoBundle()
+);
+```
+
 ## Configure
 
+```yml
+genderize_io:
+   endpoint: "http://api.genderize.io/"
+   api_key: ~
+```
 
 ## Usage from a controller
 
