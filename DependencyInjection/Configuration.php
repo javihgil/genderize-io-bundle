@@ -24,6 +24,9 @@ public function getConfigTreeBuilder()
             ->children()
                 ->scalarNode('endpoint')->defaultValue('http://api.genderize.io/')->end()
                 ->scalarNode('api_key')->end()
+                ->booleanNode('cache')->defaultValue(false)->end()
+                ->scalarNode('cache_handler')->defaultValue('genderize_io.cache_handler_doctrine')->end()
+                ->integerNode('cache_expiry_time')->defaultValue(3600*24*90)->end()
             ->end()
         ;
 

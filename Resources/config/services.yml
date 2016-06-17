@@ -6,8 +6,12 @@ services:
         class: Jhg\GenderizeIoClient\HttpClient\GenderizeClient
 
     genderize_io.genderizer:
-        class: Jhg\GenderizeIoClient\Genderizer\Genderizer
+        class: Jhg\GenderizeIoBundle\Genderizer\Genderizer
         arguments: [@genderize_io.client]
+
+    genderize_io.cache_handler_doctrine:
+        class: Jhg\GenderizeIoBundle\Genderizer\CacheHandler\DoctrineCacheHandler
+        arguments: [@doctrine]
 
     genderizer:
         alias: genderize_io.genderizer
