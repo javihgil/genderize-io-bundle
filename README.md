@@ -36,7 +36,7 @@ genderize_io:
    cache: true
    cache_expiry_time: 7776000 # 90 days
    cache_handler: 'genderize_io.cache_handler_doctrine' # default
-   
+```
 
 ## Usage from a controller
 
