@@ -34,6 +34,10 @@ class Genderizer extends \Jhg\GenderizeIoClient\Genderizer\Genderizer
      */
     protected $cacheResults = true;
 
+    /**
+     * @var boolean
+     */
+    protected $apiKey = null;
 
     /**
      * @param string|array $nameOrNames
