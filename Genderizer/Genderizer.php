@@ -223,6 +223,25 @@ class Genderizer extends \Jhg\GenderizeIoClient\Genderizer\Genderizer
     public function setCacheResults($cacheResults)
     {
         $this->cacheResults = $cacheResults;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param boolean $apiKey
+     * @return Genderizer
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+        return $this;
     } //90 days
+
 
 }
