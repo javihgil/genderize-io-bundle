@@ -4,6 +4,7 @@ parameters:
 services:
     genderize_io.client:
         class: Jhg\GenderizeIoClient\HttpClient\GenderizeClient
+        arguments: [[]]
 
     genderize_io.genderizer:
         class: Jhg\GenderizeIoBundle\Genderizer\Genderizer
