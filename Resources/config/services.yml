@@ -4,16 +4,21 @@ parameters:
 services:
     genderize_io.client:
         class: Jhg\GenderizeIoClient\HttpClient\GenderizeClient
-        arguments: [%genderize_io_endpoint%]
+        arguments: [[]]
 
     genderize_io.genderizer:
-        class: Jhg\GenderizeIoClient\Genderizer\Genderizer
-        arguments: [@genderize_io.client]
+        class: Jhg\GenderizeIoBundle\Genderizer\Genderizer
+        arguments: ["@genderize_io.client"]
+
+    genderize_io.cache_handler_doctrine:
+        class: Jhg\GenderizeIoBundle\Genderizer\CacheHandler\DoctrineCacheHandler
+        arguments: ["@doctrine"]
 
     genderizer:
         alias: genderize_io.genderizer
 
     genderize_io.twig:
         class: Jhg\GenderizeIoBundle\Twig\GenderizeExtension
+        arguments: ["@genderize_io.genderizer"]
         tags:
             - { name: twig.extension }

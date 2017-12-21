@@ -2,8 +2,41 @@
 
 This bundle integrates GenderizeIoClient into Symfony Projects.
 
+## Install
+
+1. Install package with composer:
+
+```
+composer require javihgil/genderize-io-bundle
+```
+
+2. Add bundle to appKernel.php:
+```
+$bundles = array( 
+    ...
+    new Jhg\GenderizeIoBundle\GenderizeIoBundle()
+);
+```
+
 ## Configure
 
+Configuration is not required (for the free version), but if you have an api key, you can use the simplest configuration:
+
+```yml
+genderize_io:   
+   api_key: 'API_KEY_HERE'
+```
+
+For more extended configuration, for ex. caching, you can use the following:
+ 
+```yml
+genderize_io:
+   endpoint: "http://api.genderize.io/"
+   api_key: 'API_KEY_HERE'
+   cache: true
+   cache_expiry_time: 7776000 # 90 days
+   cache_handler: 'genderize_io.cache_handler_doctrine' # default
+```
 
 ## Usage from a controller
 
